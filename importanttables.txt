@@ -1,0 +1,80 @@
+Tables:-----------------------------------------------
+
+1:-----assignorder
+
+e_id           int
+b_email        varchar
+bill_amt       varchar
+payment_status varchar
+
+IMPORTANT Query:------------------->>>("insert into assignorder(e_id,b_email,bill_amt,payment_status) values(?,?,?,?)");
+
+
+2:--------cart
+
+email      varchar
+item_id    integer
+quantity   integer
+price      integer -------------->price of particular item
+total      integer --------------->price*quantity
+hostel     varchar
+room       varchar
+mobile     varchar
+orderdt    varchar
+deliverydt varchar
+status     varchar 
+subtotal   int  ------------------> total of all items+ their quantities
+
+IMPORTANT Query:----------insert into cart(email,item_id,quantity,price,total,status) values(?,?,?,?,?,?)
+("update cart set hostel=?,room=?,mobile=?,subtotal=?,orderdt=now(),deliverydt=DATE_ADD(orderdt, INTERVAL 1 HOUR) where email=?  ");
+
+
+
+3:------------customer
+
+b_name   varchar
+b_smartid varchar
+b_email   varchar (primary key)
+b_pass    varchar
+b_hostel  varchar
+b_room    varchar
+b_phone   varchar
+b_security varchar
+b_answer   varchar
+
+IMPORTANT Query:----------->>>("insert into customer(b_name,b_smartid,b_email,b_pass,b_hostel,b_room,b_phone,b_security,b_answer)values(?,?,?,?,?,?,?,?,?)");
+            
+
+4:-------------employee
+
+e_id     integer  (Primary key)
+e_name   varchar
+e_pass   varchar
+e_phone  varchar
+e_father varchar
+e_mother varchar
+e_adhara  varchar
+e_address varchar
+e_status  varchar
+
+
+IMPORTANT Query:-------------->>>("insert into employee(e_id,e_name,e_pass,e_phone,e_father,e_mother,e_adhara,e_address,e_status)values(?,?,?,?,?,?,?,?,?)");
+               
+5:------------feedbackdb
+
+f_name    varchar
+f_email   varchar
+f_desc    varchar
+
+
+IMPORTANT Query:-------->>>("insert into feedbackdb(f_name,f_email,f_desc)values(?,?,?)");
+           
+6:----------menuitems
+
+it_id       integer(primary key)
+it_name     varchar 
+it_price    varchar
+it_category varchar
+
+IMPORTANT Query:------------------->>("insert into menuitems(it_id,it_name,it_price,it_category)values(?,?,?,?)");
+               
